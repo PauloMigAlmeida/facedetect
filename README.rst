@@ -140,6 +140,20 @@ On Debian/Ubuntu, you can install all the required dependencies with::
 
   sudo apt-get install python python-opencv libopencv-dev
 
+
+On Amazon Linux/CentOS, you can install all the required dependencies with::
+
+  sudo yum install -y python27-numpy git cmake gcc-c++
+  cd /tmp
+  git clone https://github.com/Itseez/opencv.git --depth=1
+  cd opencv/
+  cmake .
+  make
+  sudo make install
+  rm -Rf /tmp/opencv
+  sudo ln -s /usr/local/lib/python2.7/dist-packages/cv2.so /usr/lib/python2.7/dist-packages/
+
+
 and then install `facedetect` with::
 
   sudo cp facedetect /usr/local/bin
